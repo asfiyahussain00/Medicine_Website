@@ -4,7 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Medicine Website - Navbar</title>
-  <link rel="stylesheet" href="headerFooter.css">
+ <link rel="stylesheet" href="/headerFooter.css">
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 <body>
   <style>
@@ -324,11 +332,8 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   transition: 0.3s ease;
-  height: 320px; /* 👈 Card height fixed */
+  cursor: pointer;
 }
 
 .medicine-card:hover {
@@ -344,30 +349,44 @@ body {
 
 .medicine-details {
   padding: 10px 12px;
-  flex-grow: 1;
+  text-align: center;
 }
 
 .medicine-name {
-  font-size: 20px!important;
+  font-size: 20px !important;
   color: #333;
   margin-bottom: 6px;
   font-weight: 600;
 }
 
-.medicine-description {
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 8px;
-  margin-top: -20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;}
-
 .medicine-price {
   font-size: 20px;
   font-weight: bold;
   color: red;
-  margin-top: -5px;
+  margin-bottom: 7px;
+  margin-top: -10px;
+
+}
+
+/* Hidden description & button */
+.medicine-extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* When active card clicked */
+.medicine-card.active .medicine-extra {
+  max-height: 200px; /* Enough to show text + button */
+}
+
+/* Inside the extra content */
+.medicine-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  line-height: 1.4;
 }
 
 .order-btn {
@@ -378,9 +397,8 @@ body {
   display: block;
   text-align: center;
   font-weight: 600;
-  border-radius: 0 0 10px 10px;
+  border-radius: 6px;
   transition: 0.3s;
-  margin-top: -2px; /* 👈 Keeps button at bottom */
 }
 
 .order-btn:hover {
@@ -388,8 +406,8 @@ body {
 }
 
 .view-more {
-  text-align: center; 
-  margin-top: 30px;   /* spacing from cards */
+  text-align: center;
+  margin-top: 30px;
 }
 
 .more-btn {
@@ -406,7 +424,6 @@ body {
   background: #1e874b;
 }
 
-
 /* Responsive */
 @media (max-width: 900px) {
   .medicine-container {
@@ -420,11 +437,11 @@ body {
   }
 }
 
-
 .policy-section {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
   background: linear-gradient(120deg, #e9f9ef, #c8f2d4);
+  margin-top: 20px;
 }
 
 .policy-section h2 {
@@ -605,24 +622,207 @@ body {
   width: 80px;
   height: 4px;
   background: #27ae60;
-  border-radius: 2px;
+  border-radius: 2px;}
+
+
+.cta{
+  background: linear-gradient(135deg, #27ae60, #1f8e4e);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 10px;
+  margin: 60px auto;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #f1f1f1;
+}
+.cta button {
+  background-color: white;
+  color: #27ae60;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cta button:hover {
+  background-color: #f0f0f0;
+  color: #1f8e4e;
+  transform: scale(1.05);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: #25D366;
+  font-size: 55px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.2);
+}
+
+.whatsapp-float {
+
+  display: flex !important;
 }
 
 
+h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 40px;
+    }
 
+    .medicine-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* ✅ 3 cards per row */
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .medicine-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+     max-width: 320px; /* ✅ Bigger card */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .medicine-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .medicine-image {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+      border-radius: 12px;
+    
+    }
+
+    .medicine-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .medicine-details {
+      margin-top: 12px;
+    }
+
+    .medicine-details h3 {
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      color: #ff3b6f;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .view-btn {
+      display: inline-block;
+      background: #00b894;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #e73362;
+    }
+
+
+
+    /* ✅ Mobile Responsive Design */
+@media (max-width: 600px) {
+ 
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .medicine-container {
+    grid-template-columns: 1fr; /* Only one card per row */
+    gap: 20px;
+  }
+
+  .medicine-card {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .medicine-image {
+    height: 200px;
+  
+
+    border: 2px solid #00b894;
+  }
+
+  .medicine-details h3 {
+    font-size: 0.95rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .view-btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+}
   </style>
 
     <!-- Navbar -->
   <header class="navbar">
     <a href="index.html" class="brand">
-    <img src="/images/navlogo.png" alt="Site Logo" /></a>
+    <img src="./images/navlogo.png" alt="Site Logo" /></a>
 
     <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
 
     <nav class="nav-center" aria-label="Primary">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+
         <li><a href="About.html">About</a></li>
+
+       
         <li><a href="medicine.html">Medicine</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -634,7 +834,6 @@ body {
       <button type="submit">Search</button>
     </form>
   </div>
-</header>
   </header>
 
   <!-- Mobile menu (hidden on larger screens) -->
@@ -654,39 +853,40 @@ body {
   </div>
 </div>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/+923194932417" class="whatsapp-float" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+
+<body>
+
+  <!-- rest of your page content here -->
+
+  <a href="https://wa.me/+923194932417" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</body>
+
 
 
 
 
  <section class="hero-slider">
   <div class="slides">
-
     <div class="slide active">
-      <img src="/images/banner image 1.png" alt="banner 1">
+      <img src="./images/banner1.png" alt="banner 1">
     </div>
 
     <div class="slide">
-      <img src="/images/banner image 2.png" alt="banner 2">
-      <div class="slide-text">
-        <!-- Optional text content here -->
-      </div>
+      <img src="./images/banner2.png" alt="banner 2">
     </div>
 
     <div class="slide">
-      <img src="/images/banner image 3.png" alt="banner 3">
+      <img src="./images/banner3.png" alt="banner 3">
     </div>
 
     <div class="slide">
-      <img src="/images/banner image 4.png" alt="banner 4">
+      <img src="./images/banner4.png" alt="banner 4">
     </div>
-
   </div>
 
-  <!-- Navigation buttons -->
   <div class="slider-nav">
     <span class="prev">&#10094;</span>
     <span class="next">&#10095;</span>
@@ -695,13 +895,15 @@ body {
 
 
 
+
 <section class="about-section" id="about">
   <div class="about-container">
-    <div class="about-image">
-      <img src="/images/about.jpg" alt="About Al Rehman Pharmacy">
+    
+    <div class="about-image" data-aos="fade-right">
+      <img src="./images/about.jpg" alt="About Al Rehman Pharmacy">
     </div>
 
-    <div class="about-content">
+    <div class="about-content" data-aos="fade-left">
       <h2><span>About AlRehman Pharmacy</span></h2>
       <p>
         Welcome to <strong>Al Rehman Pharmacy</strong> — your trusted healthcare partner.
@@ -717,40 +919,41 @@ body {
 
       <a href="contact.html" class="about-btn">Contact Us</a>
     </div>
+
   </div>
 </section>
 
 
 
-<section class="care-section">
-<h2 class="section-title">Care By Condition</h2>
+<section class="care-section" id="care">
+  <h2 class="section-title" data-aos="fade-up">Care By Condition</h2>
 
   <div class="care-container">
-    <div class="care-card">
+    <div class="care-card" data-aos="fade-right">
       <img src="images/condition1.png" alt="Hair Fall">
       <h3>Acidity and Heartburn</h3>
       <span class="arrow">»</span>
     </div>
 
-    <div class="care-card">
+    <div class="care-card" data-aos="zoom-in">
       <img src="images/4cough-relief-removebg-preview.png" alt="Cough & Cold">
       <h3>Cough & Cold</h3>
       <span class="arrow">»</span>
     </div>
 
-    <div class="care-card">
+    <div class="care-card" data-aos="fade-up">
       <img src="images/4bones-joints-care-removebg-preview.png" alt="Bones & Joints Pain">
       <h3>Bones & Joints Pain</h3>
       <span class="arrow">»</span>
     </div>
 
-    <div class="care-card">
+    <div class="care-card" data-aos="zoom-in">
       <img src="images/4pain-fever-relief-removebg-preview.png" alt="Fever Relief">
       <h3>Fever Relief</h3>
       <span class="arrow">»</span>
     </div>
 
-    <div class="care-card">
+    <div class="care-card" data-aos="fade-left">
       <img src="images/4body-pain-removebg-preview.png" alt="Pain & Body Aches">
       <h3>Pain & Body Aches</h3>
       <span class="arrow">»</span>
@@ -759,189 +962,344 @@ body {
 </section>
 
 
-<section class="medicine-section">
-  <h2><span>Our Best</span> Medicines</h2>
 
-  <div class="medicine-container">
-    <!-- Card 1 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-2.jpg" alt="Paracetamol">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Paracetamol </h2>
-        <p class="medicine-description">
-          Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-        </p>
-        <div class="medicine-price">Rs. 100</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-3.jpg" alt="Brufen 400mg">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Brufen 400mg</h2>
-        <p class="medicine-description">
-          Fast-acting pain relief for headache, toothache, and muscle pain.
-        </p>
-        <div class="medicine-price">Rs. 150</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
 
-    <!-- Card 3 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-4.jpg" alt="Amoxicillin 250mg">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Amoxicillin 250mg</h2>
-        <p class="medicine-description">
-          Antibiotic used for bacterial infections, safe and effective.
-        </p>
-        <div class="medicine-price">Rs. 180</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
 
-    <!-- Card 4 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-5.jpg" alt="Panadol Extra">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Panadol Extra</h2>
-        <p class="medicine-description">
-          Extra strength tablet for pain and fever relief.
-        </p>
-        <div class="medicine-price">Rs. 120</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
 
-    <!-- Card 5 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-6.jpg" alt="Flagyl 400mg">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Flagyl 400mg</h2>
-        <p class="medicine-description">
-          Used to treat infections caused by bacteria and parasites.
-        </p>
-        <div class="medicine-price">Rs. 130</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
+  <h2><span style="color:#00b894;"></span>  our Medicines</h2>
 
-    <!-- Card 6 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-7.jpg" alt="Disprin">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Disprin</h2>
-        <p class="medicine-description">
-          Provides instant relief from headaches and cold symptoms.
-        </p>
-        <div class="medicine-price">Rs. 90</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
+  <div class="medicine-container" id="medicineContainer"></div>
 
-    <!-- Card 7 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-8.jpg" alt="Augmentin 625mg">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Augmentin 625mg</h2>
-        <p class="medicine-description">
-          Strong antibiotic for treating bacterial infections effectively.
-        </p>
-        <div class="medicine-price">Rs. 250</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
 
-    <!-- Card 8 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-9.jpg" alt="Ciproxin 500mg">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Ciproxin 500mg</h2>
-        <p class="medicine-description">
-          Broad-spectrum antibiotic used for multiple bacterial infections.
-        </p>
-        <div class="medicine-price">Rs. 270</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
+    // ✅ All Medicines Data
+    const medicines = [
+       { name: "COMUG CAP", price: "Rs. 2710", image: "./images/tab-5.jpg" },//
+      { name: "SPECTRIX 1200", price: "Rs. 1200", image: "./images/tab-2.jpg" },
+      { name: "ZATOFEN TAB", price: "Rs. 335", image: "./images/tab-28.jpg" },
+      { name: "CQ10 CAP 100mg", price: "Rs. 2270", image: "./images/tab-3.jpg" },
+      { name: "LIBIZO MEN SCH", price: "Rs. 3360", image: "./images/tab-1.jpg" },
+      { name: "INFERNO TAB", price: "Rs. 5188", image: "./images/tab-6.jpg" },
+      { name: "MYOFAM SCH", price: "Rs. 980", image: "./images/myofam.jpg" },
+      { name: "METHCOBAL TAB 500mg", price: "Rs. 3000", image: "./images/tab-18.jpg" },
+      { name: "CORONDIN", price: "Rs. 1740", image: "./images/tab-7.jpg" },
+      
+    
+         
+    ];
 
-    <!-- Card 9 -->
-    <div class="medicine-card">
-      <div class="medicine-image">
-        <img src="/images/tab-10.jpg" alt="Ponstan Forte">
-      </div>
-      <div class="medicine-details">
-        <h2 class="medicine-name">Ponstan Forte</h2>
-        <p class="medicine-description">
-          Painkiller used for toothache, menstrual pain, and muscle pain.
-        </p>
-        <div class="medicine-price">Rs. 160</div>
-        <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-      </div>
-    </div>
-  </div>
-<br>
-  <div class="more-btn-container">
+    // ✅ Container select
+    const container = document.getElementById("medicineContainer");
+
+    // ✅ Dynamically generate cards
+    medicines.forEach((med, index) => {
+      const card = document.createElement("div");
+      card.classList.add("medicine-card");
+      card.setAttribute("data-aos", index % 2 === 0 ? "fade-right" : "fade-left");
+
+      card.innerHTML = `
+        <div class="medicine-image">
+          <img src="${med.image}" alt="${med.name}">
+        </div>
+        <div class="medicine-details">
+          <h3>${med.name}</h3>
+          <p class="price">${med.price}</p>
+          <a href="medicineDetail.html?name=${encodeURIComponent(
+  med.name.split(' ')[0].toLowerCase()
+)}" class="view-btn">View Details</a>
+
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+ 
+ 
+  <div class="view-more" data-aos="fade-up">
     <a href="medicine.html" class="more-btn">View More Products</a>
   </div>
 </section>
 
 
+
+    
+  
+
  
- <section class="policy-section">
-  <h2><span>Our</span> Policies</h2>
+<section class="policy-section" id="policies">
+  <h2 data-aos="fade-up"><span>Our</span> Policies</h2>
 
   <div class="policy-container">
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-right">
       <i class="fa-solid fa-truck-fast"></i>
       <h3>Delivery Policy</h3>
-      <p>We deliver medicines all over <strong>Karachi</strong>. Orders below Rs. 5000 have Rs.159 delivery charges, and above Rs.5000 — delivery is <strong>free!</strong></p>
+      <p>
+        We deliver medicines all over <strong>Karachi</strong>. Orders below Rs. 5000 have Rs.159 delivery charges, and above Rs.5000 — delivery is <strong>free!</strong>
+      </p>
       <a href="/footer/Shipping.html" class="policy-btn">Read More</a>
     </div>
 
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-left" data-aos-delay="200">
       <i class="fa-solid fa-file-contract"></i>
       <h3>Terms & Conditions</h3>
-      <p>By ordering through our website or WhatsApp, you agree to our privacy, delivery, and payment policies. We ensure your data stays secure.</p>
+      <p>
+        By ordering through our website or WhatsApp, you agree to our privacy, delivery, and payment policies. We ensure your data stays secure.
+      </p>
       <a href="/footer/TermsCondition.html" class="policy-btn">Read More</a>
     </div>
   </div>
 </section>
 
 
- <div class="order-now">
-    <h3>Need Medicines Urgently?</h3>
-    <p>Order now through WhatsApp and get your medicines delivered quickly!</p>
-    <a href="https://wa.me/923194932417" target="_blank" class="whatsapp-btn">
-      <i class="fa-brands fa-whatsapp"></i> Order Now on WhatsApp
-    </a>
-  </div>
+<section class="cta" data-aos="fade-up">
+  <h2>Order Your Medicines Today!</h2>
+  <p>Experience convenience with fast delivery and secure cash on delivery options.</p>
+  <button>Shop Now</button>
 </section>
 
-<br>
-
-<div id="footer"></div>
 
 
 
+<!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="/images/footerlogo-removebg-preview.png" alt="Logo">
+        <div class="footer-description">
+          <h3>Pharmacy Experts</h3>
+          <p>Karachi's most trusted pharmacy..</p>
+          <h4>Follow us</h4>
+          <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61581759540067&mibextid=wwXIfr&rdid=rXmfJR3iGDVWHCYh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ZTaMPjapp%2F%3Fmibextid%3DwwXIfr" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/medicine.html">Medicine</a></li>
+          <li><a href="/medicine.html">A to Z Medicine</a></li>
+          <li><a href="/medicine.html">Personal Care</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/footer/TermsCondition.html">Terms Of Service</a></li>
+          <li><a href="/footer/Shipping.html">Shipping Policy</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Modern Society MCHS, Karachi, Pakistan</p>
+
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="https://wa.me/923194932417" target="_blank" style="color: inherit; text-decoration: none;">
+            +92319 4932417
+          </a>
+        </p>
+
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:alrehman14@gmail.com" target="_blank" style="color: inherit; text-decoration: none;">
+            alrehman14@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Al Rehman Pharmacy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  // ======= TOGGLE MENU (Single Working Version) =======
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+  }
+});
+</script>
+
+
+
+<script>
+ 
+function displayMedicines(filtered = medicines) {
+  container.innerHTML = ""; // clear old cards
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<p class="no-results">No medicine found 😔</p>`;
+    return;
+  }
+
+  filtered.forEach((med, index) => {
+    // ✅ create safe key for medicine name (e.g. "COMUG CAP" → "comug")
+    const medKey = med.name.split(" ")[0].toLowerCase();
+
+    const card = document.createElement("div");
+    card.classList.add("medicine-card");
+    card.setAttribute("data-aos", index % 2 === 0 ? "fade-right" : "fade-left");
+
+    card.innerHTML = `
+      <div class="medicine-image">
+        <img src="${med.image}" alt="${med.name}">
+      </div>
+      <div class="medicine-details">
+        <h3 class="medicine-name">${med.name}</h3>
+        <p class="price">${med.price}</p>
+        <a href="add-to-cart.html?name=${encodeURIComponent(medKey)}" class="view-btn">View Details</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+
+// ✅ Display function (safe for all pages)
+function displayMedicines(filtered = medicines) {
+  const container = document.getElementById("medicineContainer");
+  if (!container) return; // Stop if not on medicine page
+
+  container.innerHTML = "";
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<p class="no-results">No medicine found 😔</p>`;
+    return;
+  }
+
+  filtered.forEach((med, index) => {
+        const medKey = med.name.split(" ")[0].toLowerCase();
+        const card = document.createElement("div");
+        card.classList.add("medicine-card");
+        card.setAttribute("data-aos", index % 2 === 0 ? "fade-right" : "fade-left");
+        card.innerHTML = `
+          <div class="medicine-image">
+            <img src="${med.image}" alt="${med.name}">
+          </div>
+          <div class="medicine-details">
+            <h3 class="medicine-name">${med.name}</h3>
+            <p class="price">${med.price}</p>
+       <a href="medicineDetail.html?name=${encodeURIComponent(medKey)}" class="view-btn">View Details</a>
+
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+// ✅ Search setup for any form/input
+function setupSearch(inputId, formId) {
+  const form = document.getElementById(formId);
+  const input = document.getElementById(inputId);
+  if (!form || !input) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const query = input.value.toLowerCase().trim();
+    if (!query) return;
+
+    const onMedicinePage = window.location.pathname.toLowerCase().endsWith("medicine.html");
+
+    if (!onMedicinePage) {
+      // Redirect if not on medicine page
+      window.location.href = `medicine.html?search=${encodeURIComponent(query)}`;
+      return;
+    }
+
+    // Filter if already on medicine page
+    const filtered = medicines.filter((med) =>
+      med.name.toLowerCase().includes(query)
+    );
+    displayMedicines(filtered);
+  });
+}
+
+// ✅ Initialize Everything
+document.addEventListener("DOMContentLoaded", () => {
+  // Setup both desktop + mobile search
+  setupSearch("searchInput", "searchForm");
+  setupSearch("searchInputMobile", "searchFormMobile");
+
+  // Check for ?search= in URL
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("search") ? params.get("search").toLowerCase().trim() : "";
+
+  if (query && window.location.pathname.toLowerCase().endsWith("medicine.html")) {
+    const filtered = medicines.filter((med) =>
+      med.name.toLowerCase().includes(query)
+    );
+    displayMedicines(filtered);
+  } else {
+    displayMedicines(medicines);
+  }
+});
+</script>
+
+
+<script>
+
+ 
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let currentSlide = 0;
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+if (nextBtn && prevBtn) {
+  nextBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 4000);
+}
+
+AOS.init({
+  duration: 1200,
+  once: true,
+  easing: "ease-in-out",
+  offset: 100,
+});
+</script>
   <script src="app.js"></script>
 </body>
 </html>

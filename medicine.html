@@ -6,6 +6,12 @@
   <title>Al Rehman Pharmacy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="headerFooter.css">
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
     
 
@@ -522,13 +528,78 @@ text-align: center;
     font-size: 0.85rem;
   }
 }
+
+
+
+
+ /* === Animation === */
+    @keyframes fadeUp {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* === Staggered Animation Delay === */
+    .medicine-card:nth-child(1) { animation-delay: 0.1s; }
+    .medicine-card:nth-child(2) { animation-delay: 0.2s; }
+    .medicine-card:nth-child(3) { animation-delay: 0.3s; }
+    .medicine-card:nth-child(4) { animation-delay: 0.4s; }
+    .medicine-card:nth-child(5) { animation-delay: 0.5s; }
+    .medicine-card:nth-child(6) { animation-delay: 0.6s; }
+    .medicine-card:nth-child(7) { animation-delay: 0.7s; }
+    .medicine-card:nth-child(8) { animation-delay: 0.8s; }
+    .medicine-card:nth-child(9) { animation-delay: 0.9s; }
+    .medicine-card:nth-child(10) { animation-delay: 1s; }
+    .medicine-card:nth-child(11) { animation-delay: 1.1s; }
+    .medicine-card:nth-child(12) { animation-delay: 1.2s; }
+    .medicine-card:nth-child(13) { animation-delay: 1.3s; }
+    .medicine-card:nth-child(14) { animation-delay: 1.4s; }
+    .medicine-card:nth-child(15) { animation-delay: 1.5s; }
+    .medicine-card:nth-child(16) { animation-delay: 1.6s; }
+    .medicine-card:nth-child(17) { animation-delay: 1.7s; }
+    .medicine-card:nth-child(18) { animation-delay: 1.8s; }
+    .medicine-card:nth-child(19) { animation-delay: 1.9s; }
+    .medicine-card:nth-child(20) { animation-delay: 2s; }
+    .medicine-card:nth-child(21) { animation-delay: 2.1s; }
+    .medicine-card:nth-child(22) { animation-delay: 2.2s; }
+    .medicine-card:nth-child(23) { animation-delay: 2.3s; }
+    .medicine-card:nth-child(24) { animation-delay: 2.4s; }
+    .medicine-card:nth-child(25) { animation-delay: 2.5s; }
+    .medicine-card:nth-child(26) { animation-delay: 2.6s; }
+    .medicine-card:nth-child(27) { animation-delay: 2.7s; }
+    .medicine-card:nth-child(28) { animation-delay: 2.8s; }
+    .medicine-card:nth-child(29) { animation-delay: 2.9s; }
+    .medicine-card:nth-child(30) { animation-delay: 3s; }
+    .medicine-card:nth-child(31) { animation-delay: 3.1s; }
+    .medicine-card:nth-child(32) { animation-delay: 3.2s; }
+    .medicine-card:nth-child(33) { animation-delay: 3.3s; }
+    .medicine-card:nth-child(34) { animation-delay: 3.4s; }
+    .medicine-card:nth-child(35) { animation-delay: 3.5s; }
+    .medicine-card:nth-child(36) { animation-delay: 3.6s; }
+    .medicine-card:nth-child(37) { animation-delay: 3.7s; }
+    .medicine-card:nth-child(38) { animation-delay: 3.8s; }
+    .medicine-card:nth-child(39) { animation-delay: 3.9s; }
+
+
+
+.medicine-card {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+
   </style>
-</head>
-<body>
+
+
   
 <header class="navbar">
   <a href="index.html" class="brand">
-    <img src="/images/navlogo.png" alt="Site Logo" />
+    <img src="./images/navlogo.png" alt="Site Logo" />
   </a>
 
   <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
@@ -550,16 +621,16 @@ text-align: center;
   </div>
 </header>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
+ <!-- Mobile menu (hidden on larger screens) -->
+ <div class="mobile-menu" id="mobileMenu">
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="About.html">About</a></li>
     <li><a href="medicine.html">Medicine</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-
-  <div class="search-wrap-mobile">
+  
+ <div class="search-wrap-mobile">
     <form id="searchFormMobile">
       <input id="searchInputMobile" type="search" placeholder="Search medicines..." />
       <button type="submit">Search</button>
@@ -567,7 +638,10 @@ text-align: center;
   </div>
 </div>
 
-
+<header id="mainHeader">
+  <h1><i class="fas fa-prescription-bottle-alt"></i> Al Rehman Pharmacy</h1>
+  <p>Your trusted online pharmacy for all your healthcare needs</p>
+</header>
 
 
 <!-- WhatsApp Floating Button -->
@@ -575,641 +649,278 @@ text-align: center;
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<header id="mainHeader">
-  <h1><i class="fas fa-prescription-bottle-alt"></i> Al Rehman Pharmacy</h1>
-  <p>Your trusted online pharmacy for all your healthcare needs</p>
-</header>
-
-
-  <div class="medicine-container">
-
-  <!-- Medicine Card 1 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-1.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-    <!-- Medicine Card 2 -->
-    <div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-2.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-    <!-- Medicine Card 3 -->
-    <div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-3.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 4 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-4.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 5 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-5.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-  <!-- Medicine Card 6 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-6.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
 
 
-  <!-- Medicine Card 7-->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-7.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 8 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-8.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 9-->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-9.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 10 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-10.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 11 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-11.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-  <!-- Medicine Card 12-->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-12.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 13 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-13.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 14 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-14.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-  <!-- Medicine Card 15 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-15.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 16 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-16.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 17 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-17.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 18 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-18.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 19 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-19.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 20 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-20.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-  <!-- Medicine Card 21 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-21.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 22-->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-22.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 23 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-23.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 24 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-24.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 25 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-25.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 26 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-26.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 27 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-27.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 28 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-28.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 29 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-29.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 30 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-30.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 31 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-31.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 32 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-32.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 33 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-33.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 34 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-34.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 35 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-35.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 36 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-36.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 37 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-37.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Paracetamol 500mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-
-  <!-- Medicine Card 38-->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-38.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Voren 50mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-
-
-  <!-- Medicine Card 39 -->
-<div class="medicine-card">
-  <div class="medicine-image">
-    <img src="/images/tab-39.jpg" alt="Paracetamol">
-  </div>
-  <div class="medicine-details">
-    <h2 class="medicine-name">Berufen 200mg</h2>
-    <p class="medicine-description">
-      Effective pain reliever and fever reducer. Suitable for headaches, muscle aches, and minor arthritis pain.
-    </p>
-    <div class="medicine-price">Rs. 100</div>
-    <a href="https://wa.me/923194932417" target="_blank" class="order-btn">Order Now</a>
-  </div>
-</div>
-</div>
 
+ <style>
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .medicine-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* ✅ 3 cards per row */
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .medicine-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+     max-width: 320px; /* ✅ Bigger card */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .medicine-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .medicine-image {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+      border-radius: 12px;
+    
+    }
+
+    .medicine-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .medicine-details {
+      margin-top: 12px;
+    }
+
+    .medicine-details h3 {
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      color: #ff3b6f;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .view-btn {
+      display: inline-block;
+      background: #00b894;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #00b894;
+    }
+
+
+
+    /* ✅ Mobile Responsive Design */
+@media (max-width: 600px) {
+ 
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .medicine-container {
+    grid-template-columns: 1fr; /* Only one card per row */
+    gap: 20px;
+  }
+
+  .medicine-card {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .medicine-image {
+    height: 200px;
+  
+
+    border: 2px solid #00b894;
+  }
+
+  .medicine-details h3 {
+    font-size: 0.95rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .view-btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+  </style>
+
+  <h2><span style="color:#00b894;"></span>  our Medicines</h2>
+
+  <div class="medicine-container" id="medicineContainer"></div>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+<script>
+// ✅ All Medicines Data
+const medicines = [
+  { name: "COMUG CAP", price: "Rs. 2710", image: "./images/tab-5.jpg" },
+  { name: "SPECTRIX 1200", price: "Rs. 1200", image: "./images/tab-2.jpg" },
+  { name: "ZATOFEN TAB", price: "Rs. 335", image: "./images/tab-28.jpg" },
+  { name: "CQ10 CAP 100mg", price: "Rs. 2270", image: "./images/tab-3.jpg" },
+  { name: "LIBIZO MEN SCH", price: "Rs. 3360", image: "./images/tab-1.jpg" },
+  { name: "INFERNO TAB", price: "Rs. 5188", image: "./images/tab-6.jpg" },
+  { name: "MYOFAM SCH", price: "Rs. 980", image: "./images/myofam.jpg" },
+  { name: "METHCOBAL TAB 500mg", price: "Rs. 3000", image: "./images/tab-18.jpg" },
+  { name: "CORONDIN", price: "Rs. 1740", image: "./images/tab-7.jpg" },
+  { name: "OVACARE", price: "Rs. 2990", image: "./images/tab-8.jpg" },
+  { name: "ESON TAB 40mg", price: "Rs. 475", image: "./images/tab-16.jpg" },
+  { name: "CAC 1000 PLUS", price: "Rs. 330", image: "./images/tab-11.jpg" },
+  { name: "NUBROUL FORT TAB", price: "Rs. 195", image: "./images/tab-10.jpg" },
+  { name: "MAXFOL TAB", price: "Rs. 420", image: "./images/tab-13.jpg" },
+  { name: "ELFOVA TAB", price: "Rs. 960", image: "./images/elfova.jpg" },
+  { name: "CALDREE TAB 600mg", price: "Rs. 420", image: "./images/tab-14.jpg" },
+  { name: "DANZEN TAB 5mg", price: "Rs. 220", image: "./images/tab-33.jpg" },
+  { name: "POLYMALT TAB 100mg", price: "Rs. 300", image: "./images/tab-19.jpg" },
+  { name: "MIXEL 200mg", price: "Rs. 303", image: "./images/mixel200.jpg" },
+  { name: "MIXEL 400mg", price: "Rs. 579.58", image: "./images/tab-20.jpg" },
+  { name: "RULLING CAP 40mg", price: "Rs. 460", image: "./images/tab-22.jpg" },
+  { name: "RISEK CAP 40mg", price: "Rs. 840", image: "./images/tab-36.jpg" },
+  { name: "RISEK CAP 20mg", price: "Rs. 372", image: "./images/tab-37.jpg" },
+  { name: "OSNATE D TAB", price: "Rs. 600", image: "./images/tab-23.jpg" },
+  { name: "VOREN TAB", price: "Rs. 1099", image: "./images/tab-38.jpg" },
+  { name: "ASCARD TAB", price: "Rs. 88", image: "./images/tab-26.jpg" },
+  { name: "XTRAVIT TAB", price: "Rs. 750", image: "./images/xtravid.jpg" },
+  { name: "EZIDAY TAB 50mg", price: "Rs. 478", image: "./images/tab-25.jpg" },
+  { name: "PRIMOLUT N TAB 5mg", price: "Rs. 418", image: "./images/tab-27.jpg" },
+  { name: "STMOM 200mg", price: "Rs. 200", image: "./images/tab-31.jpg" },
+  { name: "ALDOMET TAN 250mg", price: "Rs. 1490", image: "./images/tab-34.jpg" },
+  { name: "BRUFEN TAB 400", price: "Rs. 400", image: "./images/tab-39.jpg" },
+  { name: "FAMVID TAB", price: "Rs. 630", image: "./images/tab-29.jpg" },
+  { name: "FAMIRON CAP", price: "Rs. 420", image: "./images/tab-30.jpg" },
+  { name: "MULTBAN CAP", price: "Rs. 400", image: "./images/tab-17.jpg" },
+  { name: "NOSPA TAB", price: "Rs. 250", image: "./images/tab-15.jpg" },
+  { name: "FLAGYL TAB 400mg", price: "Rs. 950", image: "./images/tab-35.jpg" },
+  { name: "CEFIM CAP 400mg", price: "Rs. 510", image: "./images/tab-32.jpg" },
+  { name: "PANADOL TAB", price: "Rs. 700", image: "./images/penadol.jpg" },
+  { name: "CARNEEL TAB", price: "Rs. 2832", image: "./images/carneelTab.jpg" },
+  { name: "FESERVOIR", price: "Rs. 2890", image: "./images/tab-12.jpg" },
+  { name: "NEUROBION TAB", price: "Rs. 1388", image: "./images/nuerobion.jpg" }
+];
+
+// ✅ Function to display medicine cards
+function displayMedicines(filtered = medicines) {
+  const container = document.getElementById("medicineContainer");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<p class="no-results">No medicine found 😔</p>`;
+    return;
+  }
+
+  filtered.forEach((med, index) => {
+    const medKey = med.name.split(" ")[0].toLowerCase();
+    const card = document.createElement("div");
+    card.classList.add("medicine-card");
+    card.setAttribute("data-aos", index % 2 === 0 ? "fade-right" : "fade-left");
+    card.innerHTML = `
+      <div class="medicine-image">
+        <img src="${med.image}" alt="${med.name}">
+      </div>
+      <div class="medicine-details">
+        <h3 class="medicine-name">${med.name}</h3>
+        <p class="price">${med.price}</p>
+        <a href="medicineDetail.html?name=${encodeURIComponent(medKey)}" class="view-btn">View Details</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// ✅ Search setup
+function setupSearch(inputId, formId) {
+  const form = document.getElementById(formId);
+  const input = document.getElementById(inputId);
+  if (!form || !input) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const query = input.value.toLowerCase().trim();
+    if (!query) return;
+
+    const onMedicinePage = window.location.pathname.toLowerCase().endsWith("medicine.html");
+
+    if (!onMedicinePage) {
+      window.location.href = `medicine.html?search=${encodeURIComponent(query)}`;
+      return;
+    }
+
+    const filtered = medicines.filter((med) =>
+      med.name.toLowerCase().includes(query)
+    );
+    displayMedicines(filtered);
+  });
+}
+
+// ✅ Initialize everything
+document.addEventListener("DOMContentLoaded", () => {
+  setupSearch("searchInput", "searchForm");
+  setupSearch("searchInputMobile", "searchFormMobile");
+
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("search") ? params.get("search").toLowerCase().trim() : "";
+
+  if (query && window.location.pathname.toLowerCase().endsWith("medicine.html")) {
+    const filtered = medicines.filter((med) =>
+      med.name.toLowerCase().includes(query)
+    );
+    displayMedicines(filtered);
+  } else {
+    displayMedicines(medicines);
+  }
+});
+
+// ✅ Toggle mobile menu
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+  }
+});
+</script>
+
+  
 
 <div class="container"></div>
   <div class="whatsapp-contact">
@@ -1223,12 +934,71 @@ text-align: center;
 <br>
 
 
-<div id="footer"></div>
+<!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="/images/footerlogo-removebg-preview.png" alt="Logo">
+        <div class="footer-description">
+          <h3>Pharmacy Experts</h3>
+          <p>Karachi's most trusted pharmacy..</p>
+          <h4>Follow us</h4>
+          <div class="social-links">
+           <a href="https://www.facebook.com/profile.php?id=61581759540067&mibextid=wwXIfr&rdid=rXmfJR3iGDVWHCYh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ZTaMPjapp%2F%3Fmibextid%3DwwXIfr" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
 
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
 
+      <!-- Categories -->
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/medicine.html">Medicine</a></li>
+          <li><a href="/medicine.html">A to Z Medicine</a></li>
+          <li><a href="/medicine.html">Personal Care</a></li>
+        </ul>
+      </div>
 
-<script src="app.js"></script>
+      <!-- Support -->
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/footer/TermsCondition.html">Terms Of Service</a></li>
+          <li><a href="/footer/Shipping.html">Shipping Policy</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
 
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Modern Society MCHS, Karachi, Pakistan</p>
+
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="https://wa.me/923194932417" target="_blank" style="color: inherit; text-decoration: none;">
+            +92319 4932417
+          </a>
+        </p>
+
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:alrehman14@gmail.com" target="_blank" style="color: inherit; text-decoration: none;">
+            alrehman14@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Al Rehman Pharmacy. All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <script>
     // Button animation
@@ -1242,7 +1012,25 @@ text-align: center;
     })
 
   </script>
+
+  <script>
   
+ const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+
+      // Jab menu open ho, usi jagah khula rahe (upar scroll na kare)
+      if (mobileMenu.classList.contains("open")) {
+        menuToggle.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  }
+
+
+</script>
 
 
 

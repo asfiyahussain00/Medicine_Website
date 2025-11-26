@@ -7,7 +7,13 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <link rel="stylesheet" href="headerFooter.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
+
    
 
 
@@ -269,7 +275,7 @@ body {
  <!-- Navbar -->
   <header class="navbar">
     <a href="index.html" class="brand">
-    <img src="/images/navlogo.png" alt="Site Logo" /></a>
+    <img src="./images/navlogo.png" alt="Site Logo" /></a>
 
     <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
 
@@ -277,7 +283,7 @@ body {
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="/medicine.html">Medicine</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -313,11 +319,13 @@ body {
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
- <!-- Hero -->
+
+
+<!-- Hero -->
 <section class="hero">
   
   <!-- Left Side: Text -->
-  <div class="hero-text">
+  <div class="hero-text" data-aos="fade-right">
     <h1>About MediCare</h1>
     <p>
       At <b>Al Rehman Medical</b>, we deliver <b>trusted medicines</b> right to your doorstep 
@@ -329,70 +337,80 @@ body {
 
   <!-- Right Side: Images -->
   <div class="hero-images">
-    <img src="/images/medicine.jpg" alt="Medicines">
-    <img src="/images/doctor.jpg" alt="Doctor">
-    <img src="/images/pharmacy.jpg" alt="Pharmacy">
-    <img src="/images/tablets.jpg" alt="Tablets">
+    <img src="./images/medicine.jpg" alt="Medicines" data-aos="zoom-in" data-aos-delay="100">
+    <img src="./images/doctor.jpg" alt="Doctor" data-aos="zoom-in" data-aos-delay="200">
+    <img src="./images/pharmacy.jpg" alt="Pharmacy" data-aos="zoom-in" data-aos-delay="300">
+    <img src="./images/tablets.jpg" alt="Tablets" data-aos="zoom-in" data-aos-delay="400">
   </div>
 
 </section>
 
+ <!-- About -->
+<section class="about" data-aos="fade-up">
+  <h2>Who We Are</h2>
+  <p>
+    MediCare is your trusted online medicine delivery service. 
+    From life-saving prescriptions to wellness essentials, 
+    we bring everything you need to your doorstep — safe, affordable, and convenient.
+  </p>
+</section>
 
-  <!-- About -->
-  <section class="about">
-    <h2>Who We Are</h2>
-    <p>MediCare is your trusted online medicine delivery service. From life-saving prescriptions to wellness essentials, 
-    we bring everything you need to your doorstep — safe, affordable, and convenient.</p>
-  </section>
+ 
 
-  <!-- Our Values -->
-  <section class="values">
-    <h2>Our Values</h2>
-    <div class="value-grid">
-      <div class="value-card">
-        <i class="fa-solid fa-shield-heart"></i>
-        <h3>Trust</h3>
-        <p>We ensure genuine, high-quality medicines from trusted suppliers.</p>
-      </div>
-      <div class="value-card">
-        <i class="fa-solid fa-hand-holding-dollar"></i>
-        <h3>Affordability</h3>
-        <p>Competitive pricing and exclusive discounts for every customer.</p>
-      </div>
-      <div class="value-card">
-        <i class="fa-solid fa-people-group"></i>
-        <h3>Accessibility</h3>
-        <p>Medicines available for everyone, anytime, anywhere.</p>
-      </div>
+ 
+<!-- Our Values -->
+<section class="values" data-aos="fade-up">
+  <h2>Our Values</h2>
+  <div class="value-grid">
+    <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+      <i class="fa-solid fa-shield-heart"></i>
+      <h3>Trust</h3>
+      <p>We ensure genuine, high-quality medicines from trusted suppliers.</p>
     </div>
-  </section>
 
-  <!-- Why Choose Us -->
-  <section class="features">
-    <h2>Why Choose Us</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <i class="fa-solid fa-truck-medical"></i>
-        <h3>Fast Delivery</h3>
-        <p>Get your medicines delivered quickly to your doorstep, hassle-free.</p>
-      </div>
-      <div class="feature">
-        <i class="fa-solid fa-capsules"></i>
-        <h3>100% Genuine Medicines</h3>
-        <p>We partner only with trusted pharmacies and suppliers.</p>
-      </div>
-      <div class="feature">
-        <i class="fa-solid fa-hand-holding-dollar"></i>
-        <h3>Cash on Delivery</h3>
-        <p>Pay only when you receive your medicines. Easy and secure.</p>
-      </div>
-      <div class="feature">
-        <i class="fa-solid fa-headset"></i>
-        <h3>24/7 Support</h3>
-        <p>Our team is always available to assist you with your needs.</p>
-      </div>
+    <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <h3>Affordability</h3>
+      <p>Competitive pricing and exclusive discounts for every customer.</p>
     </div>
-  </section>
+
+    <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+      <i class="fa-solid fa-people-group"></i>
+      <h3>Accessibility</h3>
+      <p>Medicines available for everyone, anytime, anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<section class="features" data-aos="fade-up">
+  <h2>Why Choose Us</h2>
+  <div class="feature-grid">
+    <div class="feature" data-aos="fade-up" data-aos-delay="100">
+      <i class="fa-solid fa-truck-medical"></i>
+      <h3>Fast Delivery</h3>
+      <p>Get your medicines delivered quickly to your doorstep, hassle-free.</p>
+    </div>
+
+    <div class="feature" data-aos="fade-up" data-aos-delay="200">
+      <i class="fa-solid fa-capsules"></i>
+      <h3>100% Genuine Medicines</h3>
+      <p>We partner only with trusted pharmacies and suppliers.</p>
+    </div>
+
+    <div class="feature" data-aos="fade-up" data-aos-delay="300">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <h3>Cash on Delivery</h3>
+      <p>Pay only when you receive your medicines. Easy and secure.</p>
+    </div>
+
+    <div class="feature" data-aos="fade-up" data-aos-delay="400">
+      <i class="fa-solid fa-headset"></i>
+      <h3>24/7 Support</h3>
+      <p>Our team is always available to assist you with your needs.</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- Call to Action -->
   <section class="cta">
@@ -401,7 +419,85 @@ body {
     <button>Shop Now</button>
   </section>
 
-<div id="footer"></div>
-<script src="/app.js"></script>
+<!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="/images/footerlogo-removebg-preview.png" alt="Logo">
+        <div class="footer-description">
+          <h3>Pharmacy Experts</h3>
+          <p>Karachi's most trusted pharmacy..</p>
+          <h4>Follow us</h4>
+          <div class="social-links">
+           <a href="https://www.facebook.com/profile.php?id=61581759540067&mibextid=wwXIfr&rdid=rXmfJR3iGDVWHCYh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ZTaMPjapp%2F%3Fmibextid%3DwwXIfr" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/medicine.html">Medicine</a></li>
+          <li><a href="/medicine.html">A to Z Medicine</a></li>
+          <li><a href="/medicine.html">Personal Care</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/footer/TermsCondition.html">Terms Of Service</a></li>
+          <li><a href="/footer/Shipping.html">Shipping Policy</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Modern Society MCHS, Karachi, Pakistan</p>
+
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="https://wa.me/923194932417" target="_blank" style="color: inherit; text-decoration: none;">
+            +92319 4932417
+          </a>
+        </p>
+
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:alrehman14@gmail.com" target="_blank" style="color: inherit; text-decoration: none;">
+            alrehman14@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Al Rehman Pharmacy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,    
+    offset: 100    
+  });
+</script>
+
+
+<script src="app.js"></script>
 </body>
 </html>

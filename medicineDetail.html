@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicine Detail</title>
+  <link rel="stylesheet" href="headerFooter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6f8ff;
+      margin: 0;
+    
+    }
+
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+ 
+  transition: all 0.3s ease-in-out;
+}
+
+
+    /* --- Left Section (Image) --- */
+    .left-section {
+      flex: 1;
+      min-width: 300px;
+    max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-section img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      border: 5px solid #20b358; /* 🔹 Stylish border */
+      box-shadow: 0 6px 20px rgba(255, 59, 111, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .left-section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Right Section (Details) --- */
+    .right-section {
+      flex: 1;
+      min-width: 300px;
+      padding: 30px;
+      text-align: left;
+    }
+
+    .right-section h2 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      color: #20b358;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .brand {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      color: #444;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .price-section {
+      font-size: 20px;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .per-strip {
+      color: #20b358;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .add-btn {
+      display: inline-block;
+      background: #20b358;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .add-btn:hover {
+      background: #20b358;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+     
+
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .right-section {
+        text-align: center;
+      }
+
+      .left-section img {
+        max-width: 250px;
+      }
+    }
+
+    .footer .whatsapp-float {
+  display: none!important;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="./images/navlogo.png" alt="Site Logo" />
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+
+    <nav class="nav-center" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-wrap">
+      <form id="searchForm">
+        <input id="searchInput" type="search" placeholder="Search medicines..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="medicine.html">Medicine</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="search-wrap-mobile">
+      <form id="searchFormMobile">
+        <input id="searchInputMobile" type="search" placeholder="Search medicines..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/+923194932417" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Medicine Detail -->
+  <div class="container">
+    <div class="left-section">
+      <img id="med-image" src="" alt="Medicine Image">
+    </div>
+    <div class="right-section">
+      <h2 id="med-name"></h2>
+      <div class="rating">★★★★★ <span style="font-size:14px; color:#666;">1 Rating</span></div>
+    
+      <p class="description" id="med-description"></p>
+      <p class="price-section" id="med-price"></p>
+      <p class="per-strip">Per Strip</p>
+      <a href="#" id="add-to-cart" class="add-btn">Order Now</a>
+    </div>
+  </div>
+
+  
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="/images/footerlogo-removebg-preview.png" alt="Logo">
+        <div class="footer-description">
+          <h3>Pharmacy Experts</h3>
+          <p>Karachi's most trusted pharmacy..</p>
+          <h4>Follow us</h4>
+          <div class="social-links">
+           <a href="https://www.facebook.com/profile.php?id=61581759540067&mibextid=wwXIfr&rdid=rXmfJR3iGDVWHCYh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ZTaMPjapp%2F%3Fmibextid%3DwwXIfr" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/medicine.html">Medicine</a></li>
+          <li><a href="/medicine.html">A to Z Medicine</a></li>
+          <li><a href="/medicine.html">Personal Care</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/footer/TermsCondition.html">Terms Of Service</a></li>
+          <li><a href="/footer/Shipping.html">Shipping Policy</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Modern Society MCHS, Karachi, Pakistan</p>
+
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="https://wa.me/923194932417" target="_blank" style="color: inherit; text-decoration: none;">
+            +92319 4932417
+          </a>
+        </p>
+
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:alrehman14@gmail.com" target="_blank" style="color: inherit; text-decoration: none;">
+            alrehman14@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Al Rehman Pharmacy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+ <script>
+const medicines = {
+  comug: { name: "COMUG CAP 2710", price: "Rs. 2710", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-5.jpg" },
+  spectrix: { name: "SPECTRIX 1200", price: "Rs. 1200", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-2.jpg" },
+  zatofen: { name: "ZATOFEN TAB", price: "Rs. 335", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-28.jpg" },
+  cq10: { name: "CQ10 CAP 100mg", price: "Rs. 2270", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-3.jpg" },
+  libizo: { name: "LIBIZO MEN SCH", price: "Rs. 3360", description: "14 Sashy (Per Box)", image: "./images/tab-1.jpg" },
+  inferno: { name: "INFERNO TAB", price: "Rs. 5188", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-6.jpg" },
+  myofam: { name: "MYOFAM SCH", price: "Rs. 980", description: "10 Sashy (per Box)", image: "./images/myofam.jpg" },
+  methcobal: { name: "METHCOBAL TAB 500mg", price: "Rs. 3000", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-18.jpg" },
+  corondin: { name: "CORONDIN", price: "Rs. 1740", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-7.jpg" },
+  ovacare: { name: "OVACARE", price: "Rs. 2990", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-8.jpg" },
+  nubroul: { name: "NUBROUL FORT TAB", price: "Rs. 195", description: "1 Strip 5 Tablets (Per Box)", image: "./images/tab-10.jpg" },
+  maxfol: { name: "MAXFOL TAB", price: "Rs. 420", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-13.jpg" },
+  elfova: { name: "ELFOVA TAB", price: "Rs. 960", description: "1 Strip 10 Tablets (Per Box)", image: "./images/elfova.jpg" },
+  caldree: { name: "CALDREE TAB 600mg", price: "Rs. 420", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-14.jpg" },
+  danzen: { name: "DANZEN TAB 5mg", price: "Rs. 220", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-33.jpg" },
+  polymalt: { name: "POLYMALT TAB 100mg", price: "Rs. 300", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-19.jpg" },
+ mixelmg: { name: "MIXEL CAP 200mg", price: "Rs. 303", description: "1 Strip 5 Tablets (Per Box)", image: "./images/tab-21.jpg" },
+mixel: { name: "MIXEL  CAP 400mg", price: "Rs. 579.58", description: "1 Strip 5 Tablets (Per Box)", image: "./images/tab-20.jpg" },
+  rulling: { name: "RULLING CAP 40mg", price: "Rs. 460", description: "1 Strip 7 Tablets (Per Box)", image: "./images/tab-22.jpg" },
+  risek: { name: "RISEK CAP 40mg", price: "Rs. 840", description: "1 Strip 7 Tablets (Per Box)", image: "./images/tab-36.jpg" },
+  risek: { name: "RISEK CAP 20mg", price: "Rs. 372", description: "1 Strip 7 Tablets (Per Box)", image: "./images/tab-37.jpg" },
+  osnate: { name: "OSNATE D TAB", price: "Rs. 600", description: "1 Strip 6 Tablets (Per Box)", image: "./images/tab-23.jpg" },
+  voren: { name: "VOREN TAB", price: "Rs. 1099", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-38.jpg" },
+  xtravit: { name: "XTRAVIT TAB", price: "Rs. 750", description: "1 Bottle 20 Tablets (Per Box)", image: "./images/xtravid.jpg" },
+  eziday: { name: "EZIDAY TAB 50mg", price: "Rs. 478", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-25.jpg" },
+  ascard: { name: "ASCARD TAB 75mg", price: "Rs. 88.75", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-26.jpg" },
+  primolut: { name: "PRIMOLUT N TAB 5mg", price: "Rs. 418", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-27.jpg" },
+  stmom: { name: "STMOM 200mg", price: "Rs. 200", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-31.jpg" },
+  aldomet: { name: "ALDOMET TAN 250mg", price: "Rs. 1490", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-34.jpg" },
+  brufen: { name: "BRUFEN TAB 400", price: "Rs. 400", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-39.jpg" },
+  famvid: { name: "FAMVID TAB", price: "Rs. 630", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-29.jpg" },
+  famiron: { name: "FAMIRON CAP", price: "Rs. 420", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-30.jpg" },
+  multban: { name: "MULTBAN CAP", price: "Rs. 400", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-17.jpg" },
+  nospa: { name: "NOSPA TAB", price: "Rs. 250", description: "1 Strip 24 Tablets (Per Box)", image: "./images/tab-15.jpg" },
+  flagyl: { name: "FLAGYL TAB 400mg", price: "Rs. 950", description: "1 Strip 10 Tablets (Per Box)", image: "./images/tab-35.jpg" },
+  cefim: { name: "CEFIM CAP 400mg", price: "Rs. 510", description: "1 Strip 5 Tablets (Per Box)", image: "./images/tab-32.jpg" },
+  panadol: { name: "PANADOL TAB (1 Strip = 10 Tablets)", price: "Rs. 700",  description: "1 Strip 10 Tablets (Per Box)" , images: "./images/penadol.jpg" },
+  carneel:{ name: "CARNEEL TAB", price: "Rs. 2832", description: "1 Strip 10 Tablets (Per Box)", image: "./images/carneelTab.jpg" },
+  feservoir:{ name: "FESERVOIR",  description: "1 Strip 10 Tablets (Per Box)",price: "Rs. 2890", image: "./images/tab-12.jpg" },
+ neurobion: { name: "NEUROBION TAB",   description: "1 Strip 10 Tablets (Per Box)", price: "Rs. 1388", image: "./images/nuerobion.jpg" },
+  eson: { name: "ESON TAB 40mg",   description: "1 Strip 7 Tablets (Per Box)", price: "Rs. 475", image: "./images/tab-16.jpg" },
+  cac:{ name: "CAC 1000 PLUS",  description: "1 bottle 10 Tablets (Per Box)", price: "Rs. 330", image: "./images/tab-11.jpg" },
+         
+};
+
+// Get URL parameter
+const params = new URLSearchParams(window.location.search);
+const medName = params.get("name");
+const med = medicines[medName];
+
+if (med) {
+  document.getElementById("med-name").textContent = med.name;
+  document.getElementById("med-description").textContent = med.description;
+  document.getElementById("med-price").textContent = med.price;
+  document.getElementById("med-image").src = med.image;
+  document.getElementById("add-to-cart").href =
+    `https://wa.me/923194932417?text=Hello!%20I%20want%20to%20order%20${encodeURIComponent(med.name)}%20(${encodeURIComponent(med.price)})`;
+} else {
+  document.body.innerHTML = "<h2 style='text-align:center;color:#555;'>Medicine not found</h2>";
+}
+</script>
+
+
+<script src="app.js"></script>
+
+
+</body>
+</html>
